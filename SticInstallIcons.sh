@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# This file is part of SinergiaCRM.
+# SinergiaCRM is a work developed by SinergiaTIC Association, based on SuiteCRM.
+# Copyright (C) 2013 - 2023 SinergiaTIC Association
+
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU Affero General Public License version 3 as published by the
+# Free Software Foundation.
+
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+# details.
+
+# You should have received a copy of the GNU Affero General Public License along with
+# this program; if not, see http://www.gnu.org/licenses or write to the Free
+# Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+
+# You can contact SinergiaTIC Association at email address info@sinergiacrm.org.
+
+
 # Script for rebuilding SinergiaCRM icon fonts and stylesheets
 
 # This script is used to rebuild the SinergiaCRM icon fonts and stylesheets. 
@@ -7,41 +28,34 @@
 # This script should be run without parameters from the SticUtils/Icons folder.
 
 # Dependencies:
-# - git for cloning the SuiteP-Icon-Font repository
+# - git for updating the repository
 # - svgo for compressing and copying SticIcons to the tmp folder
 # - icon-font-generator for creating the icon font from the SVG files
 # - scssphp for compiling the SCSS sources into CSS
+# - if svgo or icon-font-generator aren't available, please install the using node version > 14.0.0. See ./HOWTO.md
 
 # Instructions:
 # 1. Ensure that all dependencies are installed and available in the PATH.
-# 2. Navigate to the SticUtils/Icons folder and run bash InstallNewIcons.sh
-
-# Usage of SuiteP-Icon-Font repository:
-# The SuiteP-Icon-Font repository (https://github.com/salesagility/SuiteP-Icon-Font) is used 
-# to obtain the icon files required for the SinergiaCRM icon fonts and stylesheets.
-# The repository is cloned to the SuiteP-Icon-Font which is deleted at the end of the script
+# 2. Run bash SticInstallIcons.sh
 
 # Adding a new icon:
-# To add a new icon to SinergiaCRM, copy it to the SticUtils/Icons/SticIcons folder. 
+# To add a new icon to SinergiaCRM, copy it to the SticSrc folder. 
 # It is a good idea to start with a copy of one of the existing icons, rename it, modify it with Inkscape, 
 # and save it as a plain SVG file.
 
-# Remove any existing tmpSrc directory and create a new one
+# Remove any existing tmpSrc directory if exists
 rm -rf tmpSrc
-mkdir -p tmpSrc
 
 # Update repository
 git pull
 
 # Compress and copy SuiteP Icons to tmp folder
-svgo -f src/ tmpSrc
+cp -r src/ tmpSrc
 
 # Compress and copy SticSrc to tmp folder
-svgo -f SticSrc/ -o tmpSrc
+svgo -q -f SticSrc/ -o tmpSrc
 
-# Create font from ./src folder
-# icon-font-generator tmpSrc/*svg -o /application/sinergiacrm/themes/SuiteP/css/suitep-base/ --mono --center -p suitepicon --csspath /application/sinergiacrm/themes/SuiteP/css/suitep-base/suitepicon-glyphs.scss --name suitepicon
-
+# Create font from ./tmpSrc folder
 icon-font-generator tmpSrc/*svg -o suitepicon --mono --center -p suitepicon --csspath suitepicon/suitepicon-glyphs.scss --name suitepicon 
 
 # cp -r suitepicon/* /application/sinergiacrm/themes/SuiteP/css/suitep-base/
