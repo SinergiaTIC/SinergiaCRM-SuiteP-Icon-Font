@@ -1,10 +1,10 @@
 @font-face {
     font-family: "suitepicon";
-    src: url("suitepicon.eot?08646c0f77d835a9d5490be74f0857f7?#iefix") format("embedded-opentype"),
-url("suitepicon.woff2?08646c0f77d835a9d5490be74f0857f7") format("woff2"),
-url("suitepicon.woff?08646c0f77d835a9d5490be74f0857f7") format("woff"),
-url("suitepicon.ttf?08646c0f77d835a9d5490be74f0857f7") format("truetype"),
-url("suitepicon.svg?08646c0f77d835a9d5490be74f0857f7#suitepicon") format("svg");
+    src: url("suitepicon.eot?2c6ddfe25e907c60150077b1725589f2?#iefix") format("embedded-opentype"),
+url("suitepicon.woff2?2c6ddfe25e907c60150077b1725589f2") format("woff2"),
+url("suitepicon.woff?2c6ddfe25e907c60150077b1725589f2") format("woff"),
+url("suitepicon.ttf?2c6ddfe25e907c60150077b1725589f2") format("truetype"),
+url("suitepicon.svg?2c6ddfe25e907c60150077b1725589f2#suitepicon") format("svg");
 }
 
 i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
@@ -192,7 +192,7 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-action-sorting-none:before {
     content: "\f13a";
 }
-.suitepicon-action-stic-security-groups-module-rules:before {
+.suitepicon-action-stic-security-groups-rules:before {
     content: "\f13b";
 }
 .suitepicon-action-subtract:before {
@@ -693,7 +693,7 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-module-stic-resources:before {
     content: "\f1e1";
 }
-.suitepicon-module-stic-security-groups-module-rules:before {
+.suitepicon-module-stic-security-groups-rules:before {
     content: "\f1e2";
 }
 .suitepicon-module-stic-sepe-actions:before {
