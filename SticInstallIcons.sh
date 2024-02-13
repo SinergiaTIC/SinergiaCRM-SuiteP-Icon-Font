@@ -58,37 +58,31 @@ svgo -q -f SticSrc/ -o tmpSrc
 # Create font from ./tmpSrc folder
 icon-font-generator tmpSrc/*svg -o suitepicon --mono --center -p suitepicon --csspath suitepicon/suitepicon-glyphs.scss --name suitepicon 
 
-cp -r suitepicon/* ../themes/SuiteP/css/suitep-base/
-# docker cp suitepicon/. sw-php-fpm:/application/sinergiacrm/themes/SuiteP/css/suitep-base/
+# cp -r suitepicon/* /application/sinergiacrm/themes/SuiteP/css/suitep-base/
+docker cp suitepicon/. sw-php-fpm:/application/sinergiacrm/themes/SuiteP/css/suitep-base/
 
 # Regenerate style.css from scss sources to activate new suitepicon classes
 echo "Generating css for Stic subtheme"
-../SticInclude/vendor/scssphp/bin/pscss -s compressed ../themes/SuiteP/css/Stic/style.scss > ../themes/SuiteP/css/Stic/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Stic/style.css ../cache/themes/SuiteP/css/Stic/style.css
-
-exit
-# docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Stic/style.scss > /application/sinergiacrm/themes/SuiteP/css/Stic/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Stic/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Stic/style.css"
+# /application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Stic/style.scss > /application/sinergiacrm/themes/SuiteP/css/Stic/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Stic/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Stic/style.css
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Stic/style.scss > /application/sinergiacrm/themes/SuiteP/css/Stic/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Stic/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Stic/style.css"
 
 echo "Generating css for SticCustom subtheme"
-SticInclude/vendor/scssphp/bin/pscss -s compressed themes/SuiteP/css/SticCustom/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css
-SticInclude/vendor/scssphp/bin/pscss -s compressed themes/SuiteP/css/Dawn/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css
-SticInclude/vendor/scssphp/bin/pscss -s compressed themes/SuiteP/css/SticCustom/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css
-SticInclude/vendor/scssphp/bin/pscss -s compressed themes/SuiteP/css/SticCustom/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css
-SticInclude/vendor/scssphp/bin/pscss -s compressed themes/SuiteP/css/SticCustom/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.scss > /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css && cp /application/sinergiacrm/themes/SuiteP/css/SticCustom/style.css /application/sinergiacrm/cache/themes/SuiteP/css/SticCustom/style.css"
 
-# echo "Generating css for Dawn subtheme"
-# SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Dawn/style.scss > /application/sinergiacrm/themes/SuiteP/css/Dawn/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Dawn/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Dawn/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Dawn/style.css"
+echo "Generating css for Dawn subtheme"
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Dawn/style.scss > /application/sinergiacrm/themes/SuiteP/css/Dawn/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Dawn/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Dawn/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Dawn/style.css"
 
-# echo "Generating css for Dusk subtheme"
-# docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Dusk/style.scss > /application/sinergiacrm/themes/SuiteP/css/Dusk/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Dusk/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Dusk/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Dusk/style.css"
+echo "Generating css for Dusk subtheme"
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Dusk/style.scss > /application/sinergiacrm/themes/SuiteP/css/Dusk/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Dusk/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Dusk/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Dusk/style.css"
 
-# echo "Generating css for Day subtheme"
-# docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Day/style.scss > /application/sinergiacrm/themes/SuiteP/css/Day/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Day/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Day/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Day/style.css"
+echo "Generating css for Day subtheme"
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Day/style.scss > /application/sinergiacrm/themes/SuiteP/css/Day/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Day/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Day/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Day/style.css"
 
-# echo "Generating css for Night subtheme"
-# docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Night/style.scss > /application/sinergiacrm/themes/SuiteP/css/Night/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Night/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Night/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Night/style.css"
+echo "Generating css for Night subtheme"
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Night/style.scss > /application/sinergiacrm/themes/SuiteP/css/Night/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Night/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Night/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Night/style.css"
 
-# echo "Generating css for Noon subtheme"
-# docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Noon/style.scss > /application/sinergiacrm/themes/SuiteP/css/Noon/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Noon/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css"
+echo "Generating css for Noon subtheme"
+docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Noon/style.scss > /application/sinergiacrm/themes/SuiteP/css/Noon/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Noon/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css"
 
 # Delete tmpSrc directory and SuiteP-Icon-Font repository
 rm -rf tmpSrc
