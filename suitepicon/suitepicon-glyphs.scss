@@ -1,10 +1,10 @@
 @font-face {
     font-family: "suitepicon";
-    src: url("suitepicon.eot?1d0890ff4b0db41cc5c6c9a4d896215b?#iefix") format("embedded-opentype"),
-url("suitepicon.woff2?1d0890ff4b0db41cc5c6c9a4d896215b") format("woff2"),
-url("suitepicon.woff?1d0890ff4b0db41cc5c6c9a4d896215b") format("woff"),
-url("suitepicon.ttf?1d0890ff4b0db41cc5c6c9a4d896215b") format("truetype"),
-url("suitepicon.svg?1d0890ff4b0db41cc5c6c9a4d896215b#suitepicon") format("svg");
+    src: url("suitepicon.eot?b37c2fca5477731e3fec382c5e71ccb7?#iefix") format("embedded-opentype"),
+url("suitepicon.woff2?b37c2fca5477731e3fec382c5e71ccb7") format("woff2"),
+url("suitepicon.woff?b37c2fca5477731e3fec382c5e71ccb7") format("woff"),
+url("suitepicon.ttf?b37c2fca5477731e3fec382c5e71ccb7") format("truetype"),
+url("suitepicon.svg?b37c2fca5477731e3fec382c5e71ccb7#suitepicon") format("svg");
 }
 
 i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
@@ -321,10 +321,10 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-admin-module-loader:before {
     content: "\f165";
 }
-.suitepicon-admin-oauth-keys:before {
+.suitepicon-admin-oauth2:before {
     content: "\f166";
 }
-.suitepicon-admin-oauth2:before {
+.suitepicon-admin-oauth-keys:before {
     content: "\f167";
 }
 .suitepicon-admin-outbound-email:before {
@@ -489,16 +489,16 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-module-campaigntrackers:before {
     content: "\f19d";
 }
-.suitepicon-module-case-updates:before {
+.suitepicon-module-cases:before {
     content: "\f19e";
 }
-.suitepicon-module-cases:before {
+.suitepicon-module-case-updates:before {
     content: "\f19f";
 }
-.suitepicon-module-company:before {
+.suitepicon-module-companyc:before {
     content: "\f1a0";
 }
-.suitepicon-module-companyc:before {
+.suitepicon-module-company:before {
     content: "\f1a1";
 }
 .suitepicon-module-contacts:before {
@@ -522,10 +522,10 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-module-editview:before {
     content: "\f1a8";
 }
-.suitepicon-module-email-marketing:before {
+.suitepicon-module-email-marketing2:before {
     content: "\f1a9";
 }
-.suitepicon-module-email-marketing2:before {
+.suitepicon-module-email-marketing:before {
     content: "\f1aa";
 }
 .suitepicon-module-emails:before {
@@ -720,42 +720,48 @@ i[class^="suitepicon-"]:before, i[class*=" suitepicon-"]:before {
 .suitepicon-module-stic-skills:before {
     content: "\f1ea";
 }
-.suitepicon-module-stic-training:before {
+.suitepicon-module-stic-time-tracker:before {
     content: "\f1eb";
 }
-.suitepicon-module-stic-validation-actions:before {
+.suitepicon-module-stic-training:before {
     content: "\f1ec";
 }
-.suitepicon-module-stic-work-experience:before {
+.suitepicon-module-stic-validation-actions:before {
     content: "\f1ed";
 }
-.suitepicon-module-subpanels:before {
+.suitepicon-module-stic-work-calendar:before {
     content: "\f1ee";
 }
-.suitepicon-module-survey-responses:before {
+.suitepicon-module-stic-work-experience:before {
     content: "\f1ef";
 }
-.suitepicon-module-surveys:before {
+.suitepicon-module-subpanels:before {
     content: "\f1f0";
 }
-.suitepicon-module-targets:before {
+.suitepicon-module-survey-responses:before {
     content: "\f1f1";
 }
-.suitepicon-module-tasks:before {
+.suitepicon-module-surveys:before {
     content: "\f1f2";
 }
-.suitepicon-module-trackers:before {
+.suitepicon-module-targets:before {
     content: "\f1f3";
 }
-.suitepicon-module-users:before {
+.suitepicon-module-tasks:before {
     content: "\f1f4";
 }
-.suitepicon-template-company:before {
+.suitepicon-module-trackers:before {
     content: "\f1f5";
 }
-.suitepicon-template-file:before {
+.suitepicon-module-users:before {
     content: "\f1f6";
 }
-.suitepicon-template-issue:before {
+.suitepicon-template-company:before {
     content: "\f1f7";
+}
+.suitepicon-template-file:before {
+    content: "\f1f8";
+}
+.suitepicon-template-issue:before {
+    content: "\f1f9";
 }
