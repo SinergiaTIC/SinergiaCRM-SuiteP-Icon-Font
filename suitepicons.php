@@ -2,258 +2,244 @@
 /**
  * This file is part of SinergiaCRM.
  * SinergiaCRM is a work developed by SinergiaTIC Association, based on SuiteCRM.
- * Copyright (C) 2013 - 2023 SinergiaTIC Association
- *
- * This program is free software; you can redistribute it and/or modify it under
- * the terms of the GNU Affero General Public License version 3 as published by the
- * Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Affero General Public License along with
- * this program; if not, see http://www.gnu.org/licenses or write to the Free
- * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301 USA.
- *
- * You can contact SinergiaTIC Association at email address info@sinergiacrm.org.
+ * Copyright (C) 2013 - 2026 SinergiaTIC Association
  */
 
-/**
- * Visualizador de Suitepicons
- * Lee los glifos del archivo SCSS y utiliza las fuentes de la ruta confirmada.
- */
-
-// --- CONFIGURACIÓN ---
-// Ruta al archivo donde están definidos los nombres y códigos
+// 1. Configuration
 $scssFile = 'suitepicon/suitepicon-glyphs.scss';
+$outputFile = 'suitepicons.html';
 
-// Ruta donde están los archivos de fuente (.woff, .ttf) relativa a la raíz del CRM
-$fontDir = 'suitepicon/';
-
-// --- LÓGICA DE EXTRACCIÓN ---
-$icons = [];
-if (file_exists($scssFile)) {
-    $content = file_get_contents($scssFile);
-    
-    // Buscamos definiciones tipo: .suitepicon-action-edit:before { content: "\e904"; }
-    // Esta Regex captura: Grupo 1 (Nombre clase), Grupo 2 (Código Unicode)
-    preg_match_all('/\.((?:suitepicon|glyphicon)-[\w-]+)::?before\s*\{\s*content:\s*["\']\\\([a-fA-F0-9]+)["\']/', $content, $matches, PREG_SET_ORDER);
-    
-    foreach ($matches as $match) {
-        $icons[$match[1]] = $match[2];
-    }
-    ksort($icons); // Ordenar alfabéticamente
+if (!file_exists($scssFile)) {
+    die("Error: SCSS file not found at $scssFile.\n");
 }
-ob_start();
-?>
+
+// 2. Parse the SCSS
+$scssContent = file_get_contents($scssFile);
+preg_match_all('/\.(suitepicon-[\w-]+):before\s*{\s*content:\s*"\\\\([\w]+)";\s*}/', $scssContent, $matches);
+
+$icons = [];
+if (!empty($matches[1])) {
+    foreach ($matches[1] as $index => $className) {
+        $icons[] = [
+            'class'   => $className,
+            'unicode' => $matches[2][$index],
+            'short'   => str_replace('suitepicon-', '', $className)
+        ];
+    }
+}
+
+$totalIcons = count($icons);
+
+// 3. Generate HTML
+$html = <<<HTML
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Suitepicons</title>
+    <title>SinergiaCRM Suitepicons Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-        /* 1. DEFINICIÓN DE LA FUENTE */
+        :root {
+            --icon-size: 36px;
+            --icon-color: #555;
+            --preview-bg: #ffffff;
+        }
+
         @font-face {
             font-family: 'SuiteP_Internal';
-            src: url('<?php echo $fontDir; ?>suitepicon.woff') format('woff'),
-                 url('<?php echo $fontDir; ?>suitepicon.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
+            src: url('suitepicon/suitepicon.woff') format('woff'),
+                 url('suitepicon/suitepicon.ttf') format('truetype');
         }
 
-        /* 2. CLASE BASE */
+        body { background-color: #f4f6f9; padding: 40px 20px; font-family: sans-serif; }
+        
         .my-icon {
-            font-family: 'SuiteP_Internal', sans-serif !important;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
+            font-family: 'SuiteP_Internal' !important;
+            font-size: var(--icon-size);
+            color: var(--icon-color);
+            
+            /* SOLUCIÓ: Forçar estil normal per evitar l'efecte estirat */
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            
             line-height: 1;
-            -webkit-font-smoothing: antialiased;
             display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* 3. GENERACIÓN DE LOS GLIFOS (CSS Dinámico) */
-        <?php foreach($icons as $class => $code): ?>
-        .<?php echo $class; ?>:before { content: "\<?php echo $code; ?>"; }
-        <?php endforeach; ?>
+HTML;
 
-        /* 4. ESTILOS DE LA UI */
-        body { 
-            background-color: #f4f6f9; 
-            padding: 40px 20px; 
-            font-family: system-ui, -apple-system, sans-serif; 
-        }
+foreach ($icons as $icon) {
+    $html .= "        .{$icon['class']}:before { content: \"\\{$icon['unicode']}\"; }\n";
+}
+
+$html .= <<<HTML
         
-        .header-area { margin-bottom: 40px; text-align: center; }
-        .search-sticky { 
-            position: sticky; top: 20px; z-index: 100; 
-            max-width: 600px; margin: 0 auto 30px auto; 
-        }
-        
-        .icon-card {
-            background: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 12px; /* Más redondeado */
-            padding: 25px 10px;
-            text-align: center;
+        .search-container { max-width: 500px; margin: 0 auto 30px; }
+
+        /* Circular Color Pickers */
+        .config-color-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 35px !important;
+            height: 35px !important;
+            background: none;
+            border: 2px solid #ddd !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
             cursor: pointer;
-            transition: all 0.2s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
             overflow: hidden;
         }
-        
-        .icon-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: #0d6efd;
-        }
-        
-        .icon-glyph {
-            font-size: 36px; /* Icono grande */
-            margin-bottom: 15px;
-            color: #555;
+        .config-color-input::-webkit-color-swatch-wrapper { padding: 0; }
+        .config-color-input::-webkit-color-swatch { border: none; border-radius: 50%; }
+
+        /* Card split: Preview vs Info */
+        .icon-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
             transition: transform 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .icon-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        
+        .icon-preview {
+            background-color: var(--preview-bg);
+            padding: 25px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            transition: background-color 0.2s;
         }
         
-        .icon-card:hover .icon-glyph {
-            color: #0d6efd;
-            transform: scale(1.2);
-        }
-        
-        .icon-name {
-            font-size: 11px;
-            color: #6c757d;
-            font-family: 'Consolas', monospace;
+        .icon-info {
             background: #f8f9fa;
-            padding: 4px 8px;
-            border-radius: 4px;
+            border-top: 1px solid #eee;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .icon-name {
+            font-size: 10px;
+            font-family: monospace;
+            color: #666;
             word-break: break-all;
         }
 
-        /* TOAST PERSONALIZADO */
         #toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 50px;
-            padding: 12px 24px;
-            position: fixed;
-            z-index: 1000;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s, bottom 0.3s;
+            visibility: hidden; background: #333; color: white; padding: 12px 25px;
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            border-radius: 50px; z-index: 1000; opacity: 0; transition: 0.3s;
         }
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            bottom: 50px;
-        }
+        #toast.show { visibility: visible; opacity: 1; bottom: 40px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-area">
-        <h1 class="fw-bold">🎨 Galería Suitepicons</h1>
-        <p class="text-muted">Total: <strong><?php echo count($icons); ?></strong> iconos disponibles</p>
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">🎨 Suitepicons</h1>
+        <p class="text-muted">Total: $totalIcons icons</p>
     </div>
 
-    <div class="search-sticky">
-        <input type="text" id="search" class="form-control form-control-lg shadow-sm rounded-pill" 
-               placeholder="🔍 Buscar (ej: edit, user, action)..." autocomplete="off" autofocus>
-    </div>
-
-    <?php if(empty($icons)): ?>
-        <div class="alert alert-warning text-center">
-            No se han encontrado iconos. Verifica que el archivo <code><?php echo $scssFile; ?></code> contiene las clases.
+    <div class="card shadow-sm mb-4 border-0 rounded-4">
+        <div class="card-body d-flex flex-wrap align-items-center gap-4 justify-content-center">
+            <div class="d-flex align-items-center gap-2">
+                <label class="small fw-bold">Size:</label>
+                <input type="range" id="sizeRange" min="16" max="64" value="36" class="form-range" style="width: 100px;">
+                <span id="sizeValue" class="badge bg-primary">36px</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <label class="small fw-bold">Icon:</label>
+                <input type="color" id="colorPicker" value="#555555" class="config-color-input">
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <label class="small fw-bold">BG:</label>
+                <input type="color" id="bgPicker" value="#ffffff" class="config-color-input">
+            </div>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3" onclick="resetConfig()">Reset</button>
         </div>
-    <?php else: ?>
-        <div class="row g-3" id="icon-grid">
-            <?php foreach($icons as $class => $code): 
-                // Limpiamos el nombre para la búsqueda (sin el prefijo)
-                $cleanName = str_replace(['suitepicon-', 'glyphicon-'], '', $class);
-            ?>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="<?php echo $class . ' ' . $cleanName; ?>">
-                <div class="icon-card" onclick="copyToClipboard('<?php echo $class; ?>')">
-                    <div class="icon-glyph">
-                        <i class="my-icon <?php echo $class; ?>"></i>
-                    </div>
-                    <div class="icon-name"><?php echo $cleanName; ?></div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search" class="form-control form-control-lg shadow-sm rounded-pill" placeholder="🔍 Search...">
+    </div>
+
+    <div class="row g-3" id="icon-grid">
+HTML;
+
+foreach ($icons as $icon) {
+    $searchData = strtolower($icon['class'] . ' ' . $icon['short']);
+    $html .= <<<HTML
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="{$searchData}">
+            <div class="icon-card" onclick="copyToClipboard('{$icon['class']}')">
+                <div class="icon-preview">
+                    <i class="my-icon {$icon['class']}"></i>
+                </div>
+                <div class="icon-info">
+                    <div class="icon-name">{$icon['short']}</div>
                 </div>
             </div>
-            <?php endforeach; ?>
         </div>
-    <?php endif; ?>
+HTML;
+}
+
+$html .= <<<HTML
+    </div>
 </div>
 
-<div id="toast">¡Copiado al portapapeles!</div>
+<div id="toast">Copied!</div>
 
 <script>
-    // 1. Filtrado en tiempo real
-    const searchInput = document.getElementById('search');
-    const items = document.querySelectorAll('.icon-item');
+    const root = document.querySelector(':root');
+    const sRange = document.getElementById('sizeRange');
+    const cPicker = document.getElementById('colorPicker');
+    const bPicker = document.getElementById('bgPicker');
 
-    searchInput.addEventListener('input', (e) => {
+    function updateView() {
+        root.style.setProperty('--icon-size', sRange.value + 'px');
+        document.getElementById('sizeValue').innerText = sRange.value + 'px';
+        root.style.setProperty('--icon-color', cPicker.value);
+        root.style.setProperty('--preview-bg', bPicker.value);
+    }
+
+    function resetConfig() {
+        sRange.value = 36;
+        cPicker.value = '#555555';
+        bPicker.value = '#ffffff';
+        updateView();
+    }
+
+    [sRange, cPicker, bPicker].forEach(el => el.addEventListener('input', updateView));
+
+    document.getElementById('search').addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        items.forEach(item => {
-            const text = item.getAttribute('data-search').toLowerCase();
-            item.style.display = text.includes(term) ? '' : 'none';
+        document.querySelectorAll('.icon-item').forEach(item => {
+            item.style.display = item.getAttribute('data-search').includes(term) ? '' : 'none';
         });
     });
 
-    // 2. Copiar al portapapeles y mostrar Toast
     function copyToClipboard(cls) {
-        // Generamos el código HTML standard para SuiteCRM
-        const html = `<span class="suitepicon ${cls}"></span>`;
-        
-        navigator.clipboard.writeText(html).then(() => {
-            showToast(`Copiado: <span class="fw-bold">${cls}</span>`);
-        }).catch(err => {
-            console.error('Error al copiar', err);
+        navigator.clipboard.writeText('<span class="suitepicon ' + cls + '"></span>').then(() => {
+            const t = document.getElementById("toast");
+            t.classList.add("show");
+            setTimeout(() => t.classList.remove("show"), 2000);
         });
     }
-
-    // 3. Gestión del Toast
-    let toastTimeout;
-    function showToast(htmlMsg) {
-        const t = document.getElementById("toast");
-        t.innerHTML = htmlMsg; // Permite HTML dentro del toast
-        t.classList.add("show");
-        
-        // Reiniciar el temporizador si hacemos muchos clics rápidos
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => { 
-            t.classList.remove("show"); 
-        }, 2000);
-    }
 </script>
-
 </body>
 </html>
-<?php 
-$html = ob_get_clean();
+HTML;
 
-// Guardar fichero HTML generado
-file_put_contents('suitepicons.html', $html);
-
-echo "Fichero generado: suitepicons.html\n";
-?>
+file_put_contents($outputFile, $html);
+echo "Success: $outputFile generated.\n";
