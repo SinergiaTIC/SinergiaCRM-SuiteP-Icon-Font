@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Suitepicons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* 1. DEFINICIÓN DE LA FUENTE */
+        @font-face {
+            font-family: 'SuiteP_Internal';
+            src: url('suitepicon/suitepicon.woff') format('woff'),
+                 url('suitepicon/suitepicon.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. CLASE BASE */
+        .my-icon {
+            font-family: 'SuiteP_Internal', sans-serif !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+        }
+
+        /* 3. GENERACIÓN DE LOS GLIFOS (CSS Dinámico) */
+                .suitepicon-action-above:before { content: "\f101"; }
+                .suitepicon-action-add:before { content: "\f102"; }
+                .suitepicon-action-alerts:before { content: "\f104"; }
+                .suitepicon-action-alerts-small:before { content: "\f103"; }
+                .suitepicon-action-back:before { content: "\f105"; }
+                .suitepicon-action-below:before { content: "\f106"; }
+                .suitepicon-action-caret:before { content: "\f107"; }
+                .suitepicon-action-clear:before { content: "\f108"; }
+                .suitepicon-action-confirm:before { content: "\f109"; }
+                .suitepicon-action-create-contact-vcard:before { content: "\f10a"; }
+                .suitepicon-action-create-group-user:before { content: "\f10b"; }
+                .suitepicon-action-create-person-form:before { content: "\f10c"; }
+                .suitepicon-action-create-security-group:before { content: "\f10d"; }
+                .suitepicon-action-create-stic-bookings:before { content: "\f10e"; }
+                .suitepicon-action-create-stic-followups:before { content: "\f10f"; }
+                .suitepicon-action-create-stic-resources:before { content: "\f110"; }
+                .suitepicon-action-create-stic-sessions:before { content: "\f111"; }
+                .suitepicon-action-create-stic-web-forms:before { content: "\f112"; }
+                .suitepicon-action-current-user:before { content: "\f113"; }
+                .suitepicon-action-delete:before { content: "\f114"; }
+                .suitepicon-action-down:before { content: "\f115"; }
+                .suitepicon-action-edit:before { content: "\f116"; }
+                .suitepicon-action-empty-action:before { content: "\f117"; }
+                .suitepicon-action-first:before { content: "\f118"; }
+                .suitepicon-action-forward:before { content: "\f119"; }
+                .suitepicon-action-home:before { content: "\f11a"; }
+                .suitepicon-action-import:before { content: "\f11c"; }
+                .suitepicon-action-import-line-item:before { content: "\f11b"; }
+                .suitepicon-action-info:before { content: "\f11d"; }
+                .suitepicon-action-invade:before { content: "\f11e"; }
+                .suitepicon-action-last:before { content: "\f11f"; }
+                .suitepicon-action-left:before { content: "\f120"; }
+                .suitepicon-action-list-maps:before { content: "\f121"; }
+                .suitepicon-action-m182:before { content: "\f122"; }
+                .suitepicon-action-megaphone:before { content: "\f123"; }
+                .suitepicon-action-minus:before { content: "\f124"; }
+                .suitepicon-action-move-down:before { content: "\f125"; }
+                .suitepicon-action-move-left:before { content: "\f126"; }
+                .suitepicon-action-move-right:before { content: "\f127"; }
+                .suitepicon-action-move-up:before { content: "\f128"; }
+                .suitepicon-action-norma-43:before { content: "\f129"; }
+                .suitepicon-action-payments-aggregated:before { content: "\f12a"; }
+                .suitepicon-action-plus:before { content: "\f12b"; }
+                .suitepicon-action-quick-radius-map:before { content: "\f12c"; }
+                .suitepicon-action-reload:before { content: "\f12d"; }
+                .suitepicon-action-resource-chart:before { content: "\f12e"; }
+                .suitepicon-action-right:before { content: "\f12f"; }
+                .suitepicon-action-role-management:before { content: "\f130"; }
+                .suitepicon-action-schedule:before { content: "\f133"; }
+                .suitepicon-action-schedule-call:before { content: "\f131"; }
+                .suitepicon-action-schedule-meeting:before { content: "\f132"; }
+                .suitepicon-action-search:before { content: "\f134"; }
+                .suitepicon-action-security-groups:before { content: "\f135"; }
+                .suitepicon-action-security-suite-settings:before { content: "\f136"; }
+                .suitepicon-action-select:before { content: "\f137"; }
+                .suitepicon-action-setup-email:before { content: "\f138"; }
+                .suitepicon-action-sorting-ascending:before { content: "\f139"; }
+                .suitepicon-action-sorting-descending:before { content: "\f13a"; }
+                .suitepicon-action-sorting-none:before { content: "\f13b"; }
+                .suitepicon-action-stic-security-groups-rules:before { content: "\f13c"; }
+                .suitepicon-action-subtract:before { content: "\f13d"; }
+                .suitepicon-action-today:before { content: "\f13e"; }
+                .suitepicon-action-up:before { content: "\f13f"; }
+                .suitepicon-action-user:before { content: "\f141"; }
+                .suitepicon-action-user-small:before { content: "\f140"; }
+                .suitepicon-action-vcard:before { content: "\f142"; }
+                .suitepicon-action-view:before { content: "\f149"; }
+                .suitepicon-action-view-create-email-templates:before { content: "\f143"; }
+                .suitepicon-action-view-diagnostics:before { content: "\f144"; }
+                .suitepicon-action-view-email-templates:before { content: "\f145"; }
+                .suitepicon-action-view-process-audit:before { content: "\f146"; }
+                .suitepicon-action-view-project-tasks:before { content: "\f147"; }
+                .suitepicon-action-view-record:before { content: "\f148"; }
+                .suitepicon-admin-activity-streams:before { content: "\f14a"; }
+                .suitepicon-admin-address-cache:before { content: "\f14b"; }
+                .suitepicon-admin-aobh-businesshours:before { content: "\f14c"; }
+                .suitepicon-admin-aod-settings:before { content: "\f14d"; }
+                .suitepicon-admin-aop-settings:before { content: "\f14e"; }
+                .suitepicon-admin-aos-settings:before { content: "\f14f"; }
+                .suitepicon-admin-backups:before { content: "\f150"; }
+                .suitepicon-admin-campaign-email-settings:before { content: "\f151"; }
+                .suitepicon-admin-configure-module-menu-filters:before { content: "\f152"; }
+                .suitepicon-admin-connectors:before { content: "\f153"; }
+                .suitepicon-admin-currencies:before { content: "\f154"; }
+                .suitepicon-admin-diagnostic:before { content: "\f155"; }
+                .suitepicon-admin-display-modules-and-subpanels:before { content: "\f156"; }
+                .suitepicon-admin-donate:before { content: "\f157"; }
+                .suitepicon-admin-dropdown-editor:before { content: "\f158"; }
+                .suitepicon-admin-email-queue:before { content: "\f159"; }
+                .suitepicon-admin-email-settings:before { content: "\f15a"; }
+                .suitepicon-admin-geocode-addresses:before { content: "\f15b"; }
+                .suitepicon-admin-geocoded-counts:before { content: "\f15c"; }
+                .suitepicon-admin-geocoding-test:before { content: "\f15d"; }
+                .suitepicon-admin-global-search:before { content: "\f15e"; }
+                .suitepicon-admin-google-maps-settings:before { content: "\f15f"; }
+                .suitepicon-admin-history-subpanel:before { content: "\f160"; }
+                .suitepicon-admin-import:before { content: "\f161"; }
+                .suitepicon-admin-inbound-email:before { content: "\f162"; }
+                .suitepicon-admin-languages:before { content: "\f163"; }
+                .suitepicon-admin-locale:before { content: "\f164"; }
+                .suitepicon-admin-module-builder:before { content: "\f165"; }
+                .suitepicon-admin-module-loader:before { content: "\f166"; }
+                .suitepicon-admin-module-trackers:before { content: "\f167"; }
+                .suitepicon-admin-oauth-keys:before { content: "\f169"; }
+                .suitepicon-admin-oauth2:before { content: "\f168"; }
+                .suitepicon-admin-outbound-email:before { content: "\f16a"; }
+                .suitepicon-admin-password:before { content: "\f16b"; }
+                .suitepicon-admin-pdf-settings:before { content: "\f16c"; }
+                .suitepicon-admin-rebuild:before { content: "\f16d"; }
+                .suitepicon-admin-releases:before { content: "\f16e"; }
+                .suitepicon-admin-rename-modules:before { content: "\f16f"; }
+                .suitepicon-admin-repair:before { content: "\f170"; }
+                .suitepicon-admin-roles:before { content: "\f171"; }
+                .suitepicon-admin-scheduler:before { content: "\f172"; }
+                .suitepicon-admin-security:before { content: "\f174"; }
+                .suitepicon-admin-security-suite-group-management:before { content: "\f173"; }
+                .suitepicon-admin-stic-configure-main-menu:before { content: "\f175"; }
+                .suitepicon-admin-stic-custom-views:before { content: "\f176"; }
+                .suitepicon-admin-stic-messages:before { content: "\f177"; }
+                .suitepicon-admin-stic-settings:before { content: "\f178"; }
+                .suitepicon-admin-stic-validation-actions:before { content: "\f179"; }
+                .suitepicon-admin-studio:before { content: "\f17a"; }
+                .suitepicon-admin-system-settings:before { content: "\f17b"; }
+                .suitepicon-admin-themes:before { content: "\f17c"; }
+                .suitepicon-admin-upgrade-wizard:before { content: "\f17d"; }
+                .suitepicon-admin-user-management:before { content: "\f17e"; }
+                .suitepicon-admin-workflow:before { content: "\f17f"; }
+                .suitepicon-dashlet-charts-funnel:before { content: "\f180"; }
+                .suitepicon-dashlet-charts-groupby:before { content: "\f181"; }
+                .suitepicon-dashlet-charts-horizontal:before { content: "\f182"; }
+                .suitepicon-dashlet-charts-pie:before { content: "\f183"; }
+                .suitepicon-dashlet-charts-vertical:before { content: "\f184"; }
+                .suitepicon-dashlet-jotpad:before { content: "\f185"; }
+                .suitepicon-dashlet-sugarnews:before { content: "\f186"; }
+                .suitepicon-display-folder-closed:before { content: "\f187"; }
+                .suitepicon-display-folder-open:before { content: "\f188"; }
+                .suitepicon-favorite-star:before { content: "\f18a"; }
+                .suitepicon-favorite-star-outline:before { content: "\f189"; }
+                .suitepicon-mimetype-tab:before { content: "\f18b"; }
+                .suitepicon-module-accounts:before { content: "\f18c"; }
+                .suitepicon-module-aclroles:before { content: "\f18d"; }
+                .suitepicon-module-activities:before { content: "\f18e"; }
+                .suitepicon-module-administration:before { content: "\f18f"; }
+                .suitepicon-module-am-tasktemplates:before { content: "\f190"; }
+                .suitepicon-module-aok-knowledge-base-categories:before { content: "\f191"; }
+                .suitepicon-module-aok-knowledgebase:before { content: "\f192"; }
+                .suitepicon-module-aor-reports:before { content: "\f193"; }
+                .suitepicon-module-aos-contracts:before { content: "\f195"; }
+                .suitepicon-module-aos-contracts-signature:before { content: "\f194"; }
+                .suitepicon-module-aos-invoices:before { content: "\f196"; }
+                .suitepicon-module-aos-pdf-templates:before { content: "\f197"; }
+                .suitepicon-module-aos-product-categories:before { content: "\f198"; }
+                .suitepicon-module-aos-quotes:before { content: "\f199"; }
+                .suitepicon-module-aow-workflow:before { content: "\f19a"; }
+                .suitepicon-module-areas-maps:before { content: "\f19b"; }
+                .suitepicon-module-basic:before { content: "\f19c"; }
+                .suitepicon-module-bugs:before { content: "\f19d"; }
+                .suitepicon-module-calendar:before { content: "\f19e"; }
+                .suitepicon-module-calls:before { content: "\f19f"; }
+                .suitepicon-module-campaigns:before { content: "\f1a0"; }
+                .suitepicon-module-campaigntrackers:before { content: "\f1a1"; }
+                .suitepicon-module-case-updates:before { content: "\f1a3"; }
+                .suitepicon-module-cases:before { content: "\f1a2"; }
+                .suitepicon-module-company:before { content: "\f1a5"; }
+                .suitepicon-module-companyc:before { content: "\f1a4"; }
+                .suitepicon-module-contacts:before { content: "\f1a6"; }
+                .suitepicon-module-default:before { content: "\f1a7"; }
+                .suitepicon-module-detailview:before { content: "\f1a8"; }
+                .suitepicon-module-direct-reports:before { content: "\f1a9"; }
+                .suitepicon-module-document-revisions:before { content: "\f1aa"; }
+                .suitepicon-module-documents:before { content: "\f1ab"; }
+                .suitepicon-module-editview:before { content: "\f1ac"; }
+                .suitepicon-module-email-marketing:before { content: "\f1ae"; }
+                .suitepicon-module-email-marketing2:before { content: "\f1ad"; }
+                .suitepicon-module-emails:before { content: "\f1af"; }
+                .suitepicon-module-existing-package:before { content: "\f1b0"; }
+                .suitepicon-module-fields:before { content: "\f1b1"; }
+                .suitepicon-module-file:before { content: "\f1b2"; }
+                .suitepicon-module-filter:before { content: "\f1b3"; }
+                .suitepicon-module-fp-event-locations:before { content: "\f1b4"; }
+                .suitepicon-module-fp-events:before { content: "\f1b5"; }
+                .suitepicon-module-history:before { content: "\f1b6"; }
+                .suitepicon-module-issue:before { content: "\f1b7"; }
+                .suitepicon-module-jjwg-maps:before { content: "\f1b8"; }
+                .suitepicon-module-jjwg-markers:before { content: "\f1b9"; }
+                .suitepicon-module-labels:before { content: "\f1ba"; }
+                .suitepicon-module-layouts:before { content: "\f1bb"; }
+                .suitepicon-module-leads:before { content: "\f1bc"; }
+                .suitepicon-module-listview:before { content: "\f1bd"; }
+                .suitepicon-module-meetings:before { content: "\f1be"; }
+                .suitepicon-module-new-module:before { content: "\f1bf"; }
+                .suitepicon-module-new-package:before { content: "\f1c0"; }
+                .suitepicon-module-notes:before { content: "\f1c1"; }
+                .suitepicon-module-opportunities:before { content: "\f1c2"; }
+                .suitepicon-module-other:before { content: "\f1c3"; }
+                .suitepicon-module-overview:before { content: "\f1c4"; }
+                .suitepicon-module-person:before { content: "\f1c5"; }
+                .suitepicon-module-popupview:before { content: "\f1c6"; }
+                .suitepicon-module-process:before { content: "\f1c7"; }
+                .suitepicon-module-products:before { content: "\f1c8"; }
+                .suitepicon-module-project-tasks:before { content: "\f1c9"; }
+                .suitepicon-module-prospectlists:before { content: "\f1ca"; }
+                .suitepicon-module-quickcreate:before { content: "\f1cb"; }
+                .suitepicon-module-relationships:before { content: "\f1cc"; }
+                .suitepicon-module-sale:before { content: "\f1cd"; }
+                .suitepicon-module-schedulers:before { content: "\f1ce"; }
+                .suitepicon-module-securitygroups:before { content: "\f1cf"; }
+                .suitepicon-module-spots:before { content: "\f1d0"; }
+                .suitepicon-module-stic-accounts-relationships:before { content: "\f1d1"; }
+                .suitepicon-module-stic-assessments:before { content: "\f1d2"; }
+                .suitepicon-module-stic-assets:before { content: "\f1d3"; }
+                .suitepicon-module-stic-attendances:before { content: "\f1d4"; }
+                .suitepicon-module-stic-awf-forms:before { content: "\f1d5"; }
+                .suitepicon-module-stic-awf-links:before { content: "\f1d6"; }
+                .suitepicon-module-stic-awf-response-details:before { content: "\f1d7"; }
+                .suitepicon-module-stic-awf-responses:before { content: "\f1d8"; }
+                .suitepicon-module-stic-bookings:before { content: "\f1d9"; }
+                .suitepicon-module-stic-centers:before { content: "\f1da"; }
+                .suitepicon-module-stic-contacts-relationships:before { content: "\f1db"; }
+                .suitepicon-module-stic-conversations:before { content: "\f1dc"; }
+                .suitepicon-module-stic-events:before { content: "\f1dd"; }
+                .suitepicon-module-stic-families:before { content: "\f1de"; }
+                .suitepicon-module-stic-financial-products:before { content: "\f1df"; }
+                .suitepicon-module-stic-followups:before { content: "\f1e0"; }
+                .suitepicon-module-stic-goals:before { content: "\f1e1"; }
+                .suitepicon-module-stic-grants:before { content: "\f1e2"; }
+                .suitepicon-module-stic-group-opportunities:before { content: "\f1e3"; }
+                .suitepicon-module-stic-job-applications:before { content: "\f1e4"; }
+                .suitepicon-module-stic-job-offers:before { content: "\f1e5"; }
+                .suitepicon-module-stic-journal:before { content: "\f1e6"; }
+                .suitepicon-module-stic-medication:before { content: "\f1e8"; }
+                .suitepicon-module-stic-medication-log:before { content: "\f1e7"; }
+                .suitepicon-module-stic-messages:before { content: "\f1e9"; }
+                .suitepicon-module-stic-payment-commitments:before { content: "\f1ea"; }
+                .suitepicon-module-stic-payments:before { content: "\f1ec"; }
+                .suitepicon-module-stic-payments-aggregated:before { content: "\f1eb"; }
+                .suitepicon-module-stic-personal-environment:before { content: "\f1ed"; }
+                .suitepicon-module-stic-prescription:before { content: "\f1ee"; }
+                .suitepicon-module-stic-registrations:before { content: "\f1ef"; }
+                .suitepicon-module-stic-remittances:before { content: "\f1f0"; }
+                .suitepicon-module-stic-resources:before { content: "\f1f1"; }
+                .suitepicon-module-stic-security-groups-rules:before { content: "\f1f2"; }
+                .suitepicon-module-stic-sepe-actions:before { content: "\f1f3"; }
+                .suitepicon-module-stic-sepe-files:before { content: "\f1f4"; }
+                .suitepicon-module-stic-sepe-incidents:before { content: "\f1f5"; }
+                .suitepicon-module-stic-sessions:before { content: "\f1f6"; }
+                .suitepicon-module-stic-signature-log:before { content: "\f1f7"; }
+                .suitepicon-module-stic-signatures:before { content: "\f1f8"; }
+                .suitepicon-module-stic-signers:before { content: "\f1f9"; }
+                .suitepicon-module-stic-skills:before { content: "\f1fa"; }
+                .suitepicon-module-stic-time-tracker:before { content: "\f1fb"; }
+                .suitepicon-module-stic-training:before { content: "\f1fc"; }
+                .suitepicon-module-stic-transactions:before { content: "\f1fd"; }
+                .suitepicon-module-stic-validation-actions:before { content: "\f1fe"; }
+                .suitepicon-module-stic-work-calendar:before { content: "\f1ff"; }
+                .suitepicon-module-stic-work-experience:before { content: "\f200"; }
+                .suitepicon-module-subpanels:before { content: "\f201"; }
+                .suitepicon-module-survey-responses:before { content: "\f202"; }
+                .suitepicon-module-surveys:before { content: "\f203"; }
+                .suitepicon-module-targets:before { content: "\f204"; }
+                .suitepicon-module-tasks:before { content: "\f205"; }
+                .suitepicon-module-users:before { content: "\f206"; }
+                .suitepicon-template-company:before { content: "\f207"; }
+                .suitepicon-template-file:before { content: "\f208"; }
+                .suitepicon-template-issue:before { content: "\f209"; }
+        
+        /* 4. ESTILOS DE LA UI */
+        body { 
+            background-color: #f4f6f9; 
+            padding: 40px 20px; 
+            font-family: system-ui, -apple-system, sans-serif; 
+        }
+        
+        .header-area { margin-bottom: 40px; text-align: center; }
+        .search-sticky { 
+            position: sticky; top: 20px; z-index: 100; 
+            max-width: 600px; margin: 0 auto 30px auto; 
+        }
+        
+        .icon-card {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px; /* Más redondeado */
+            padding: 25px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #0d6efd;
+        }
+        
+        .icon-glyph {
+            font-size: 36px; /* Icono grande */
+            margin-bottom: 15px;
+            color: #555;
+            transition: transform 0.2s;
+        }
+        
+        .icon-card:hover .icon-glyph {
+            color: #0d6efd;
+            transform: scale(1.2);
+        }
+        
+        .icon-name {
+            font-size: 11px;
+            color: #6c757d;
+            font-family: 'Consolas', monospace;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+
+        /* TOAST PERSONALIZADO */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 12px 24px;
+            position: fixed;
+            z-index: 1000;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-area">
+        <h1 class="fw-bold">🎨 Galería Suitepicons</h1>
+        <p class="text-muted">Total: <strong>265</strong> iconos disponibles</p>
+    </div>
+
+    <div class="search-sticky">
+        <input type="text" id="search" class="form-control form-control-lg shadow-sm rounded-pill" 
+               placeholder="🔍 Buscar (ej: edit, user, action)..." autocomplete="off" autofocus>
+    </div>
+
+            <div class="row g-3" id="icon-grid">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-above action-above">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-above')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-above"></i>
+                    </div>
+                    <div class="icon-name">action-above</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-add action-add">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-add')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-add"></i>
+                    </div>
+                    <div class="icon-name">action-add</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-alerts action-alerts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-alerts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-alerts"></i>
+                    </div>
+                    <div class="icon-name">action-alerts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-alerts-small action-alerts-small">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-alerts-small')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-alerts-small"></i>
+                    </div>
+                    <div class="icon-name">action-alerts-small</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-back action-back">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-back')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-back"></i>
+                    </div>
+                    <div class="icon-name">action-back</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-below action-below">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-below')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-below"></i>
+                    </div>
+                    <div class="icon-name">action-below</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-caret action-caret">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-caret')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-caret"></i>
+                    </div>
+                    <div class="icon-name">action-caret</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-clear action-clear">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-clear')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-clear"></i>
+                    </div>
+                    <div class="icon-name">action-clear</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-confirm action-confirm">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-confirm')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-confirm"></i>
+                    </div>
+                    <div class="icon-name">action-confirm</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-contact-vcard action-create-contact-vcard">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-contact-vcard')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-contact-vcard"></i>
+                    </div>
+                    <div class="icon-name">action-create-contact-vcard</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-group-user action-create-group-user">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-group-user')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-group-user"></i>
+                    </div>
+                    <div class="icon-name">action-create-group-user</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-person-form action-create-person-form">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-person-form')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-person-form"></i>
+                    </div>
+                    <div class="icon-name">action-create-person-form</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-security-group action-create-security-group">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-security-group')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-security-group"></i>
+                    </div>
+                    <div class="icon-name">action-create-security-group</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-stic-bookings action-create-stic-bookings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-stic-bookings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-stic-bookings"></i>
+                    </div>
+                    <div class="icon-name">action-create-stic-bookings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-stic-followups action-create-stic-followups">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-stic-followups')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-stic-followups"></i>
+                    </div>
+                    <div class="icon-name">action-create-stic-followups</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-stic-resources action-create-stic-resources">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-stic-resources')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-stic-resources"></i>
+                    </div>
+                    <div class="icon-name">action-create-stic-resources</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-stic-sessions action-create-stic-sessions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-stic-sessions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-stic-sessions"></i>
+                    </div>
+                    <div class="icon-name">action-create-stic-sessions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-create-stic-web-forms action-create-stic-web-forms">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-create-stic-web-forms')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-create-stic-web-forms"></i>
+                    </div>
+                    <div class="icon-name">action-create-stic-web-forms</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-current-user action-current-user">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-current-user')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-current-user"></i>
+                    </div>
+                    <div class="icon-name">action-current-user</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-delete action-delete">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-delete')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-delete"></i>
+                    </div>
+                    <div class="icon-name">action-delete</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-down action-down">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-down')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-down"></i>
+                    </div>
+                    <div class="icon-name">action-down</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-edit action-edit">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-edit')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-edit"></i>
+                    </div>
+                    <div class="icon-name">action-edit</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-empty-action action-empty-action">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-empty-action')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-empty-action"></i>
+                    </div>
+                    <div class="icon-name">action-empty-action</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-first action-first">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-first')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-first"></i>
+                    </div>
+                    <div class="icon-name">action-first</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-forward action-forward">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-forward')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-forward"></i>
+                    </div>
+                    <div class="icon-name">action-forward</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-home action-home">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-home')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-home"></i>
+                    </div>
+                    <div class="icon-name">action-home</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-import action-import">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-import')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-import"></i>
+                    </div>
+                    <div class="icon-name">action-import</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-import-line-item action-import-line-item">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-import-line-item')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-import-line-item"></i>
+                    </div>
+                    <div class="icon-name">action-import-line-item</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-info action-info">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-info')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-info"></i>
+                    </div>
+                    <div class="icon-name">action-info</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-invade action-invade">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-invade')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-invade"></i>
+                    </div>
+                    <div class="icon-name">action-invade</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-last action-last">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-last')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-last"></i>
+                    </div>
+                    <div class="icon-name">action-last</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-left action-left">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-left')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-left"></i>
+                    </div>
+                    <div class="icon-name">action-left</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-list-maps action-list-maps">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-list-maps')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-list-maps"></i>
+                    </div>
+                    <div class="icon-name">action-list-maps</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-m182 action-m182">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-m182')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-m182"></i>
+                    </div>
+                    <div class="icon-name">action-m182</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-megaphone action-megaphone">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-megaphone')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-megaphone"></i>
+                    </div>
+                    <div class="icon-name">action-megaphone</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-minus action-minus">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-minus')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-minus"></i>
+                    </div>
+                    <div class="icon-name">action-minus</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-move-down action-move-down">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-move-down')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-move-down"></i>
+                    </div>
+                    <div class="icon-name">action-move-down</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-move-left action-move-left">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-move-left')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-move-left"></i>
+                    </div>
+                    <div class="icon-name">action-move-left</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-move-right action-move-right">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-move-right')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-move-right"></i>
+                    </div>
+                    <div class="icon-name">action-move-right</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-move-up action-move-up">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-move-up')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-move-up"></i>
+                    </div>
+                    <div class="icon-name">action-move-up</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-norma-43 action-norma-43">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-norma-43')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-norma-43"></i>
+                    </div>
+                    <div class="icon-name">action-norma-43</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-payments-aggregated action-payments-aggregated">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-payments-aggregated')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-payments-aggregated"></i>
+                    </div>
+                    <div class="icon-name">action-payments-aggregated</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-plus action-plus">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-plus')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-plus"></i>
+                    </div>
+                    <div class="icon-name">action-plus</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-quick-radius-map action-quick-radius-map">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-quick-radius-map')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-quick-radius-map"></i>
+                    </div>
+                    <div class="icon-name">action-quick-radius-map</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-reload action-reload">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-reload')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-reload"></i>
+                    </div>
+                    <div class="icon-name">action-reload</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-resource-chart action-resource-chart">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-resource-chart')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-resource-chart"></i>
+                    </div>
+                    <div class="icon-name">action-resource-chart</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-right action-right">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-right')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-right"></i>
+                    </div>
+                    <div class="icon-name">action-right</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-role-management action-role-management">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-role-management')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-role-management"></i>
+                    </div>
+                    <div class="icon-name">action-role-management</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-schedule action-schedule">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-schedule')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-schedule"></i>
+                    </div>
+                    <div class="icon-name">action-schedule</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-schedule-call action-schedule-call">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-schedule-call')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-schedule-call"></i>
+                    </div>
+                    <div class="icon-name">action-schedule-call</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-schedule-meeting action-schedule-meeting">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-schedule-meeting')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-schedule-meeting"></i>
+                    </div>
+                    <div class="icon-name">action-schedule-meeting</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-search action-search">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-search')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-search"></i>
+                    </div>
+                    <div class="icon-name">action-search</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-security-groups action-security-groups">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-security-groups')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-security-groups"></i>
+                    </div>
+                    <div class="icon-name">action-security-groups</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-security-suite-settings action-security-suite-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-security-suite-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-security-suite-settings"></i>
+                    </div>
+                    <div class="icon-name">action-security-suite-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-select action-select">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-select')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-select"></i>
+                    </div>
+                    <div class="icon-name">action-select</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-setup-email action-setup-email">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-setup-email')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-setup-email"></i>
+                    </div>
+                    <div class="icon-name">action-setup-email</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-sorting-ascending action-sorting-ascending">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-sorting-ascending')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-sorting-ascending"></i>
+                    </div>
+                    <div class="icon-name">action-sorting-ascending</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-sorting-descending action-sorting-descending">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-sorting-descending')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-sorting-descending"></i>
+                    </div>
+                    <div class="icon-name">action-sorting-descending</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-sorting-none action-sorting-none">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-sorting-none')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-sorting-none"></i>
+                    </div>
+                    <div class="icon-name">action-sorting-none</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-stic-security-groups-rules action-stic-security-groups-rules">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-stic-security-groups-rules')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-stic-security-groups-rules"></i>
+                    </div>
+                    <div class="icon-name">action-stic-security-groups-rules</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-subtract action-subtract">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-subtract')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-subtract"></i>
+                    </div>
+                    <div class="icon-name">action-subtract</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-today action-today">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-today')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-today"></i>
+                    </div>
+                    <div class="icon-name">action-today</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-up action-up">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-up')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-up"></i>
+                    </div>
+                    <div class="icon-name">action-up</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-user action-user">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-user')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-user"></i>
+                    </div>
+                    <div class="icon-name">action-user</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-user-small action-user-small">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-user-small')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-user-small"></i>
+                    </div>
+                    <div class="icon-name">action-user-small</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-vcard action-vcard">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-vcard')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-vcard"></i>
+                    </div>
+                    <div class="icon-name">action-vcard</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view action-view">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view"></i>
+                    </div>
+                    <div class="icon-name">action-view</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-create-email-templates action-view-create-email-templates">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-create-email-templates')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-create-email-templates"></i>
+                    </div>
+                    <div class="icon-name">action-view-create-email-templates</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-diagnostics action-view-diagnostics">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-diagnostics')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-diagnostics"></i>
+                    </div>
+                    <div class="icon-name">action-view-diagnostics</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-email-templates action-view-email-templates">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-email-templates')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-email-templates"></i>
+                    </div>
+                    <div class="icon-name">action-view-email-templates</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-process-audit action-view-process-audit">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-process-audit')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-process-audit"></i>
+                    </div>
+                    <div class="icon-name">action-view-process-audit</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-project-tasks action-view-project-tasks">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-project-tasks')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-project-tasks"></i>
+                    </div>
+                    <div class="icon-name">action-view-project-tasks</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-action-view-record action-view-record">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-action-view-record')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-action-view-record"></i>
+                    </div>
+                    <div class="icon-name">action-view-record</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-activity-streams admin-activity-streams">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-activity-streams')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-activity-streams"></i>
+                    </div>
+                    <div class="icon-name">admin-activity-streams</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-address-cache admin-address-cache">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-address-cache')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-address-cache"></i>
+                    </div>
+                    <div class="icon-name">admin-address-cache</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-aobh-businesshours admin-aobh-businesshours">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-aobh-businesshours')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-aobh-businesshours"></i>
+                    </div>
+                    <div class="icon-name">admin-aobh-businesshours</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-aod-settings admin-aod-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-aod-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-aod-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-aod-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-aop-settings admin-aop-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-aop-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-aop-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-aop-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-aos-settings admin-aos-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-aos-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-aos-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-aos-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-backups admin-backups">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-backups')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-backups"></i>
+                    </div>
+                    <div class="icon-name">admin-backups</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-campaign-email-settings admin-campaign-email-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-campaign-email-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-campaign-email-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-campaign-email-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-configure-module-menu-filters admin-configure-module-menu-filters">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-configure-module-menu-filters')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-configure-module-menu-filters"></i>
+                    </div>
+                    <div class="icon-name">admin-configure-module-menu-filters</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-connectors admin-connectors">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-connectors')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-connectors"></i>
+                    </div>
+                    <div class="icon-name">admin-connectors</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-currencies admin-currencies">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-currencies')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-currencies"></i>
+                    </div>
+                    <div class="icon-name">admin-currencies</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-diagnostic admin-diagnostic">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-diagnostic')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-diagnostic"></i>
+                    </div>
+                    <div class="icon-name">admin-diagnostic</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-display-modules-and-subpanels admin-display-modules-and-subpanels">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-display-modules-and-subpanels')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-display-modules-and-subpanels"></i>
+                    </div>
+                    <div class="icon-name">admin-display-modules-and-subpanels</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-donate admin-donate">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-donate')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-donate"></i>
+                    </div>
+                    <div class="icon-name">admin-donate</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-dropdown-editor admin-dropdown-editor">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-dropdown-editor')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-dropdown-editor"></i>
+                    </div>
+                    <div class="icon-name">admin-dropdown-editor</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-email-queue admin-email-queue">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-email-queue')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-email-queue"></i>
+                    </div>
+                    <div class="icon-name">admin-email-queue</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-email-settings admin-email-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-email-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-email-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-email-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-geocode-addresses admin-geocode-addresses">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-geocode-addresses')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-geocode-addresses"></i>
+                    </div>
+                    <div class="icon-name">admin-geocode-addresses</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-geocoded-counts admin-geocoded-counts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-geocoded-counts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-geocoded-counts"></i>
+                    </div>
+                    <div class="icon-name">admin-geocoded-counts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-geocoding-test admin-geocoding-test">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-geocoding-test')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-geocoding-test"></i>
+                    </div>
+                    <div class="icon-name">admin-geocoding-test</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-global-search admin-global-search">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-global-search')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-global-search"></i>
+                    </div>
+                    <div class="icon-name">admin-global-search</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-google-maps-settings admin-google-maps-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-google-maps-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-google-maps-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-google-maps-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-history-subpanel admin-history-subpanel">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-history-subpanel')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-history-subpanel"></i>
+                    </div>
+                    <div class="icon-name">admin-history-subpanel</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-import admin-import">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-import')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-import"></i>
+                    </div>
+                    <div class="icon-name">admin-import</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-inbound-email admin-inbound-email">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-inbound-email')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-inbound-email"></i>
+                    </div>
+                    <div class="icon-name">admin-inbound-email</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-languages admin-languages">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-languages')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-languages"></i>
+                    </div>
+                    <div class="icon-name">admin-languages</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-locale admin-locale">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-locale')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-locale"></i>
+                    </div>
+                    <div class="icon-name">admin-locale</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-module-builder admin-module-builder">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-module-builder')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-module-builder"></i>
+                    </div>
+                    <div class="icon-name">admin-module-builder</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-module-loader admin-module-loader">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-module-loader')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-module-loader"></i>
+                    </div>
+                    <div class="icon-name">admin-module-loader</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-module-trackers admin-module-trackers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-module-trackers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-module-trackers"></i>
+                    </div>
+                    <div class="icon-name">admin-module-trackers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-oauth-keys admin-oauth-keys">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-oauth-keys')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-oauth-keys"></i>
+                    </div>
+                    <div class="icon-name">admin-oauth-keys</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-oauth2 admin-oauth2">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-oauth2')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-oauth2"></i>
+                    </div>
+                    <div class="icon-name">admin-oauth2</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-outbound-email admin-outbound-email">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-outbound-email')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-outbound-email"></i>
+                    </div>
+                    <div class="icon-name">admin-outbound-email</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-password admin-password">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-password')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-password"></i>
+                    </div>
+                    <div class="icon-name">admin-password</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-pdf-settings admin-pdf-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-pdf-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-pdf-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-pdf-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-rebuild admin-rebuild">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-rebuild')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-rebuild"></i>
+                    </div>
+                    <div class="icon-name">admin-rebuild</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-releases admin-releases">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-releases')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-releases"></i>
+                    </div>
+                    <div class="icon-name">admin-releases</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-rename-modules admin-rename-modules">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-rename-modules')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-rename-modules"></i>
+                    </div>
+                    <div class="icon-name">admin-rename-modules</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-repair admin-repair">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-repair')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-repair"></i>
+                    </div>
+                    <div class="icon-name">admin-repair</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-roles admin-roles">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-roles')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-roles"></i>
+                    </div>
+                    <div class="icon-name">admin-roles</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-scheduler admin-scheduler">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-scheduler')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-scheduler"></i>
+                    </div>
+                    <div class="icon-name">admin-scheduler</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-security admin-security">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-security')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-security"></i>
+                    </div>
+                    <div class="icon-name">admin-security</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-security-suite-group-management admin-security-suite-group-management">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-security-suite-group-management')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-security-suite-group-management"></i>
+                    </div>
+                    <div class="icon-name">admin-security-suite-group-management</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-stic-configure-main-menu admin-stic-configure-main-menu">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-stic-configure-main-menu')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-stic-configure-main-menu"></i>
+                    </div>
+                    <div class="icon-name">admin-stic-configure-main-menu</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-stic-custom-views admin-stic-custom-views">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-stic-custom-views')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-stic-custom-views"></i>
+                    </div>
+                    <div class="icon-name">admin-stic-custom-views</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-stic-messages admin-stic-messages">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-stic-messages')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-stic-messages"></i>
+                    </div>
+                    <div class="icon-name">admin-stic-messages</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-stic-settings admin-stic-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-stic-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-stic-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-stic-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-stic-validation-actions admin-stic-validation-actions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-stic-validation-actions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-stic-validation-actions"></i>
+                    </div>
+                    <div class="icon-name">admin-stic-validation-actions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-studio admin-studio">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-studio')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-studio"></i>
+                    </div>
+                    <div class="icon-name">admin-studio</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-system-settings admin-system-settings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-system-settings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-system-settings"></i>
+                    </div>
+                    <div class="icon-name">admin-system-settings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-themes admin-themes">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-themes')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-themes"></i>
+                    </div>
+                    <div class="icon-name">admin-themes</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-upgrade-wizard admin-upgrade-wizard">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-upgrade-wizard')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-upgrade-wizard"></i>
+                    </div>
+                    <div class="icon-name">admin-upgrade-wizard</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-user-management admin-user-management">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-user-management')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-user-management"></i>
+                    </div>
+                    <div class="icon-name">admin-user-management</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-admin-workflow admin-workflow">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-admin-workflow')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-admin-workflow"></i>
+                    </div>
+                    <div class="icon-name">admin-workflow</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-charts-funnel dashlet-charts-funnel">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-charts-funnel')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-charts-funnel"></i>
+                    </div>
+                    <div class="icon-name">dashlet-charts-funnel</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-charts-groupby dashlet-charts-groupby">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-charts-groupby')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-charts-groupby"></i>
+                    </div>
+                    <div class="icon-name">dashlet-charts-groupby</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-charts-horizontal dashlet-charts-horizontal">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-charts-horizontal')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-charts-horizontal"></i>
+                    </div>
+                    <div class="icon-name">dashlet-charts-horizontal</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-charts-pie dashlet-charts-pie">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-charts-pie')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-charts-pie"></i>
+                    </div>
+                    <div class="icon-name">dashlet-charts-pie</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-charts-vertical dashlet-charts-vertical">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-charts-vertical')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-charts-vertical"></i>
+                    </div>
+                    <div class="icon-name">dashlet-charts-vertical</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-jotpad dashlet-jotpad">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-jotpad')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-jotpad"></i>
+                    </div>
+                    <div class="icon-name">dashlet-jotpad</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-dashlet-sugarnews dashlet-sugarnews">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-dashlet-sugarnews')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-dashlet-sugarnews"></i>
+                    </div>
+                    <div class="icon-name">dashlet-sugarnews</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-display-folder-closed display-folder-closed">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-display-folder-closed')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-display-folder-closed"></i>
+                    </div>
+                    <div class="icon-name">display-folder-closed</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-display-folder-open display-folder-open">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-display-folder-open')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-display-folder-open"></i>
+                    </div>
+                    <div class="icon-name">display-folder-open</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-favorite-star favorite-star">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-favorite-star')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-favorite-star"></i>
+                    </div>
+                    <div class="icon-name">favorite-star</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-favorite-star-outline favorite-star-outline">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-favorite-star-outline')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-favorite-star-outline"></i>
+                    </div>
+                    <div class="icon-name">favorite-star-outline</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-mimetype-tab mimetype-tab">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-mimetype-tab')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-mimetype-tab"></i>
+                    </div>
+                    <div class="icon-name">mimetype-tab</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-accounts module-accounts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-accounts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-accounts"></i>
+                    </div>
+                    <div class="icon-name">module-accounts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aclroles module-aclroles">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aclroles')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aclroles"></i>
+                    </div>
+                    <div class="icon-name">module-aclroles</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-activities module-activities">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-activities')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-activities"></i>
+                    </div>
+                    <div class="icon-name">module-activities</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-administration module-administration">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-administration')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-administration"></i>
+                    </div>
+                    <div class="icon-name">module-administration</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-am-tasktemplates module-am-tasktemplates">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-am-tasktemplates')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-am-tasktemplates"></i>
+                    </div>
+                    <div class="icon-name">module-am-tasktemplates</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aok-knowledge-base-categories module-aok-knowledge-base-categories">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aok-knowledge-base-categories')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aok-knowledge-base-categories"></i>
+                    </div>
+                    <div class="icon-name">module-aok-knowledge-base-categories</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aok-knowledgebase module-aok-knowledgebase">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aok-knowledgebase')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aok-knowledgebase"></i>
+                    </div>
+                    <div class="icon-name">module-aok-knowledgebase</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aor-reports module-aor-reports">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aor-reports')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aor-reports"></i>
+                    </div>
+                    <div class="icon-name">module-aor-reports</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-contracts module-aos-contracts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-contracts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-contracts"></i>
+                    </div>
+                    <div class="icon-name">module-aos-contracts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-contracts-signature module-aos-contracts-signature">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-contracts-signature')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-contracts-signature"></i>
+                    </div>
+                    <div class="icon-name">module-aos-contracts-signature</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-invoices module-aos-invoices">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-invoices')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-invoices"></i>
+                    </div>
+                    <div class="icon-name">module-aos-invoices</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-pdf-templates module-aos-pdf-templates">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-pdf-templates')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-pdf-templates"></i>
+                    </div>
+                    <div class="icon-name">module-aos-pdf-templates</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-product-categories module-aos-product-categories">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-product-categories')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-product-categories"></i>
+                    </div>
+                    <div class="icon-name">module-aos-product-categories</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aos-quotes module-aos-quotes">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aos-quotes')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aos-quotes"></i>
+                    </div>
+                    <div class="icon-name">module-aos-quotes</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-aow-workflow module-aow-workflow">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-aow-workflow')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-aow-workflow"></i>
+                    </div>
+                    <div class="icon-name">module-aow-workflow</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-areas-maps module-areas-maps">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-areas-maps')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-areas-maps"></i>
+                    </div>
+                    <div class="icon-name">module-areas-maps</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-basic module-basic">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-basic')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-basic"></i>
+                    </div>
+                    <div class="icon-name">module-basic</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-bugs module-bugs">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-bugs')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-bugs"></i>
+                    </div>
+                    <div class="icon-name">module-bugs</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-calendar module-calendar">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-calendar')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-calendar"></i>
+                    </div>
+                    <div class="icon-name">module-calendar</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-calls module-calls">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-calls')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-calls"></i>
+                    </div>
+                    <div class="icon-name">module-calls</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-campaigns module-campaigns">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-campaigns')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-campaigns"></i>
+                    </div>
+                    <div class="icon-name">module-campaigns</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-campaigntrackers module-campaigntrackers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-campaigntrackers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-campaigntrackers"></i>
+                    </div>
+                    <div class="icon-name">module-campaigntrackers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-case-updates module-case-updates">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-case-updates')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-case-updates"></i>
+                    </div>
+                    <div class="icon-name">module-case-updates</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-cases module-cases">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-cases')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-cases"></i>
+                    </div>
+                    <div class="icon-name">module-cases</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-company module-company">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-company')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-company"></i>
+                    </div>
+                    <div class="icon-name">module-company</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-companyc module-companyc">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-companyc')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-companyc"></i>
+                    </div>
+                    <div class="icon-name">module-companyc</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-contacts module-contacts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-contacts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-contacts"></i>
+                    </div>
+                    <div class="icon-name">module-contacts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-default module-default">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-default')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-default"></i>
+                    </div>
+                    <div class="icon-name">module-default</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-detailview module-detailview">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-detailview')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-detailview"></i>
+                    </div>
+                    <div class="icon-name">module-detailview</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-direct-reports module-direct-reports">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-direct-reports')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-direct-reports"></i>
+                    </div>
+                    <div class="icon-name">module-direct-reports</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-document-revisions module-document-revisions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-document-revisions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-document-revisions"></i>
+                    </div>
+                    <div class="icon-name">module-document-revisions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-documents module-documents">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-documents')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-documents"></i>
+                    </div>
+                    <div class="icon-name">module-documents</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-editview module-editview">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-editview')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-editview"></i>
+                    </div>
+                    <div class="icon-name">module-editview</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-email-marketing module-email-marketing">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-email-marketing')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-email-marketing"></i>
+                    </div>
+                    <div class="icon-name">module-email-marketing</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-email-marketing2 module-email-marketing2">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-email-marketing2')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-email-marketing2"></i>
+                    </div>
+                    <div class="icon-name">module-email-marketing2</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-emails module-emails">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-emails')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-emails"></i>
+                    </div>
+                    <div class="icon-name">module-emails</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-existing-package module-existing-package">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-existing-package')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-existing-package"></i>
+                    </div>
+                    <div class="icon-name">module-existing-package</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-fields module-fields">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-fields')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-fields"></i>
+                    </div>
+                    <div class="icon-name">module-fields</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-file module-file">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-file')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-file"></i>
+                    </div>
+                    <div class="icon-name">module-file</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-filter module-filter">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-filter')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-filter"></i>
+                    </div>
+                    <div class="icon-name">module-filter</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-fp-event-locations module-fp-event-locations">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-fp-event-locations')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-fp-event-locations"></i>
+                    </div>
+                    <div class="icon-name">module-fp-event-locations</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-fp-events module-fp-events">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-fp-events')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-fp-events"></i>
+                    </div>
+                    <div class="icon-name">module-fp-events</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-history module-history">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-history')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-history"></i>
+                    </div>
+                    <div class="icon-name">module-history</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-issue module-issue">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-issue')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-issue"></i>
+                    </div>
+                    <div class="icon-name">module-issue</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-jjwg-maps module-jjwg-maps">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-jjwg-maps')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-jjwg-maps"></i>
+                    </div>
+                    <div class="icon-name">module-jjwg-maps</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-jjwg-markers module-jjwg-markers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-jjwg-markers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-jjwg-markers"></i>
+                    </div>
+                    <div class="icon-name">module-jjwg-markers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-labels module-labels">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-labels')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-labels"></i>
+                    </div>
+                    <div class="icon-name">module-labels</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-layouts module-layouts">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-layouts')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-layouts"></i>
+                    </div>
+                    <div class="icon-name">module-layouts</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-leads module-leads">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-leads')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-leads"></i>
+                    </div>
+                    <div class="icon-name">module-leads</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-listview module-listview">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-listview')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-listview"></i>
+                    </div>
+                    <div class="icon-name">module-listview</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-meetings module-meetings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-meetings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-meetings"></i>
+                    </div>
+                    <div class="icon-name">module-meetings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-new-module module-new-module">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-new-module')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-new-module"></i>
+                    </div>
+                    <div class="icon-name">module-new-module</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-new-package module-new-package">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-new-package')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-new-package"></i>
+                    </div>
+                    <div class="icon-name">module-new-package</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-notes module-notes">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-notes')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-notes"></i>
+                    </div>
+                    <div class="icon-name">module-notes</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-opportunities module-opportunities">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-opportunities')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-opportunities"></i>
+                    </div>
+                    <div class="icon-name">module-opportunities</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-other module-other">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-other')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-other"></i>
+                    </div>
+                    <div class="icon-name">module-other</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-overview module-overview">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-overview')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-overview"></i>
+                    </div>
+                    <div class="icon-name">module-overview</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-person module-person">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-person')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-person"></i>
+                    </div>
+                    <div class="icon-name">module-person</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-popupview module-popupview">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-popupview')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-popupview"></i>
+                    </div>
+                    <div class="icon-name">module-popupview</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-process module-process">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-process')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-process"></i>
+                    </div>
+                    <div class="icon-name">module-process</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-products module-products">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-products')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-products"></i>
+                    </div>
+                    <div class="icon-name">module-products</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-project-tasks module-project-tasks">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-project-tasks')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-project-tasks"></i>
+                    </div>
+                    <div class="icon-name">module-project-tasks</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-prospectlists module-prospectlists">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-prospectlists')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-prospectlists"></i>
+                    </div>
+                    <div class="icon-name">module-prospectlists</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-quickcreate module-quickcreate">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-quickcreate')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-quickcreate"></i>
+                    </div>
+                    <div class="icon-name">module-quickcreate</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-relationships module-relationships">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-relationships')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-relationships"></i>
+                    </div>
+                    <div class="icon-name">module-relationships</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-sale module-sale">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-sale')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-sale"></i>
+                    </div>
+                    <div class="icon-name">module-sale</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-schedulers module-schedulers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-schedulers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-schedulers"></i>
+                    </div>
+                    <div class="icon-name">module-schedulers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-securitygroups module-securitygroups">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-securitygroups')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-securitygroups"></i>
+                    </div>
+                    <div class="icon-name">module-securitygroups</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-spots module-spots">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-spots')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-spots"></i>
+                    </div>
+                    <div class="icon-name">module-spots</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-accounts-relationships module-stic-accounts-relationships">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-accounts-relationships')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-accounts-relationships"></i>
+                    </div>
+                    <div class="icon-name">module-stic-accounts-relationships</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-assessments module-stic-assessments">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-assessments')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-assessments"></i>
+                    </div>
+                    <div class="icon-name">module-stic-assessments</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-assets module-stic-assets">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-assets')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-assets"></i>
+                    </div>
+                    <div class="icon-name">module-stic-assets</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-attendances module-stic-attendances">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-attendances')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-attendances"></i>
+                    </div>
+                    <div class="icon-name">module-stic-attendances</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-awf-forms module-stic-awf-forms">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-awf-forms')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-awf-forms"></i>
+                    </div>
+                    <div class="icon-name">module-stic-awf-forms</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-awf-links module-stic-awf-links">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-awf-links')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-awf-links"></i>
+                    </div>
+                    <div class="icon-name">module-stic-awf-links</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-awf-response-details module-stic-awf-response-details">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-awf-response-details')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-awf-response-details"></i>
+                    </div>
+                    <div class="icon-name">module-stic-awf-response-details</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-awf-responses module-stic-awf-responses">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-awf-responses')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-awf-responses"></i>
+                    </div>
+                    <div class="icon-name">module-stic-awf-responses</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-bookings module-stic-bookings">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-bookings')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-bookings"></i>
+                    </div>
+                    <div class="icon-name">module-stic-bookings</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-centers module-stic-centers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-centers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-centers"></i>
+                    </div>
+                    <div class="icon-name">module-stic-centers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-contacts-relationships module-stic-contacts-relationships">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-contacts-relationships')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-contacts-relationships"></i>
+                    </div>
+                    <div class="icon-name">module-stic-contacts-relationships</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-conversations module-stic-conversations">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-conversations')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-conversations"></i>
+                    </div>
+                    <div class="icon-name">module-stic-conversations</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-events module-stic-events">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-events')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-events"></i>
+                    </div>
+                    <div class="icon-name">module-stic-events</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-families module-stic-families">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-families')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-families"></i>
+                    </div>
+                    <div class="icon-name">module-stic-families</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-financial-products module-stic-financial-products">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-financial-products')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-financial-products"></i>
+                    </div>
+                    <div class="icon-name">module-stic-financial-products</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-followups module-stic-followups">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-followups')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-followups"></i>
+                    </div>
+                    <div class="icon-name">module-stic-followups</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-goals module-stic-goals">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-goals')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-goals"></i>
+                    </div>
+                    <div class="icon-name">module-stic-goals</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-grants module-stic-grants">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-grants')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-grants"></i>
+                    </div>
+                    <div class="icon-name">module-stic-grants</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-group-opportunities module-stic-group-opportunities">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-group-opportunities')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-group-opportunities"></i>
+                    </div>
+                    <div class="icon-name">module-stic-group-opportunities</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-job-applications module-stic-job-applications">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-job-applications')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-job-applications"></i>
+                    </div>
+                    <div class="icon-name">module-stic-job-applications</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-job-offers module-stic-job-offers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-job-offers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-job-offers"></i>
+                    </div>
+                    <div class="icon-name">module-stic-job-offers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-journal module-stic-journal">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-journal')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-journal"></i>
+                    </div>
+                    <div class="icon-name">module-stic-journal</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-medication module-stic-medication">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-medication')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-medication"></i>
+                    </div>
+                    <div class="icon-name">module-stic-medication</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-medication-log module-stic-medication-log">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-medication-log')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-medication-log"></i>
+                    </div>
+                    <div class="icon-name">module-stic-medication-log</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-messages module-stic-messages">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-messages')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-messages"></i>
+                    </div>
+                    <div class="icon-name">module-stic-messages</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-payment-commitments module-stic-payment-commitments">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-payment-commitments')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-payment-commitments"></i>
+                    </div>
+                    <div class="icon-name">module-stic-payment-commitments</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-payments module-stic-payments">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-payments')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-payments"></i>
+                    </div>
+                    <div class="icon-name">module-stic-payments</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-payments-aggregated module-stic-payments-aggregated">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-payments-aggregated')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-payments-aggregated"></i>
+                    </div>
+                    <div class="icon-name">module-stic-payments-aggregated</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-personal-environment module-stic-personal-environment">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-personal-environment')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-personal-environment"></i>
+                    </div>
+                    <div class="icon-name">module-stic-personal-environment</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-prescription module-stic-prescription">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-prescription')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-prescription"></i>
+                    </div>
+                    <div class="icon-name">module-stic-prescription</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-registrations module-stic-registrations">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-registrations')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-registrations"></i>
+                    </div>
+                    <div class="icon-name">module-stic-registrations</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-remittances module-stic-remittances">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-remittances')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-remittances"></i>
+                    </div>
+                    <div class="icon-name">module-stic-remittances</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-resources module-stic-resources">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-resources')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-resources"></i>
+                    </div>
+                    <div class="icon-name">module-stic-resources</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-security-groups-rules module-stic-security-groups-rules">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-security-groups-rules')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-security-groups-rules"></i>
+                    </div>
+                    <div class="icon-name">module-stic-security-groups-rules</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-sepe-actions module-stic-sepe-actions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-sepe-actions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-sepe-actions"></i>
+                    </div>
+                    <div class="icon-name">module-stic-sepe-actions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-sepe-files module-stic-sepe-files">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-sepe-files')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-sepe-files"></i>
+                    </div>
+                    <div class="icon-name">module-stic-sepe-files</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-sepe-incidents module-stic-sepe-incidents">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-sepe-incidents')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-sepe-incidents"></i>
+                    </div>
+                    <div class="icon-name">module-stic-sepe-incidents</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-sessions module-stic-sessions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-sessions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-sessions"></i>
+                    </div>
+                    <div class="icon-name">module-stic-sessions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-signature-log module-stic-signature-log">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-signature-log')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-signature-log"></i>
+                    </div>
+                    <div class="icon-name">module-stic-signature-log</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-signatures module-stic-signatures">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-signatures')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-signatures"></i>
+                    </div>
+                    <div class="icon-name">module-stic-signatures</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-signers module-stic-signers">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-signers')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-signers"></i>
+                    </div>
+                    <div class="icon-name">module-stic-signers</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-skills module-stic-skills">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-skills')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-skills"></i>
+                    </div>
+                    <div class="icon-name">module-stic-skills</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-time-tracker module-stic-time-tracker">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-time-tracker')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-time-tracker"></i>
+                    </div>
+                    <div class="icon-name">module-stic-time-tracker</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-training module-stic-training">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-training')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-training"></i>
+                    </div>
+                    <div class="icon-name">module-stic-training</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-transactions module-stic-transactions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-transactions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-transactions"></i>
+                    </div>
+                    <div class="icon-name">module-stic-transactions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-validation-actions module-stic-validation-actions">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-validation-actions')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-validation-actions"></i>
+                    </div>
+                    <div class="icon-name">module-stic-validation-actions</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-work-calendar module-stic-work-calendar">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-work-calendar')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-work-calendar"></i>
+                    </div>
+                    <div class="icon-name">module-stic-work-calendar</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-stic-work-experience module-stic-work-experience">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-stic-work-experience')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-stic-work-experience"></i>
+                    </div>
+                    <div class="icon-name">module-stic-work-experience</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-subpanels module-subpanels">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-subpanels')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-subpanels"></i>
+                    </div>
+                    <div class="icon-name">module-subpanels</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-survey-responses module-survey-responses">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-survey-responses')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-survey-responses"></i>
+                    </div>
+                    <div class="icon-name">module-survey-responses</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-surveys module-surveys">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-surveys')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-surveys"></i>
+                    </div>
+                    <div class="icon-name">module-surveys</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-targets module-targets">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-targets')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-targets"></i>
+                    </div>
+                    <div class="icon-name">module-targets</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-tasks module-tasks">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-tasks')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-tasks"></i>
+                    </div>
+                    <div class="icon-name">module-tasks</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-module-users module-users">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-module-users')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-module-users"></i>
+                    </div>
+                    <div class="icon-name">module-users</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-template-company template-company">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-template-company')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-template-company"></i>
+                    </div>
+                    <div class="icon-name">template-company</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-template-file template-file">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-template-file')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-template-file"></i>
+                    </div>
+                    <div class="icon-name">template-file</div>
+                </div>
+            </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 icon-item" data-search="suitepicon-template-issue template-issue">
+                <div class="icon-card" onclick="copyToClipboard('suitepicon-template-issue')">
+                    <div class="icon-glyph">
+                        <i class="my-icon suitepicon-template-issue"></i>
+                    </div>
+                    <div class="icon-name">template-issue</div>
+                </div>
+            </div>
+                    </div>
+    </div>
+
+<div id="toast">¡Copiado al portapapeles!</div>
+
+<script>
+    // 1. Filtrado en tiempo real
+    const searchInput = document.getElementById('search');
+    const items = document.querySelectorAll('.icon-item');
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        items.forEach(item => {
+            const text = item.getAttribute('data-search').toLowerCase();
+            item.style.display = text.includes(term) ? '' : 'none';
+        });
+    });
+
+    // 2. Copiar al portapapeles y mostrar Toast
+    function copyToClipboard(cls) {
+        // Generamos el código HTML standard para SuiteCRM
+        const html = `<span class="suitepicon ${cls}"></span>`;
+        
+        navigator.clipboard.writeText(html).then(() => {
+            showToast(`Copiado: <span class="fw-bold">${cls}</span>`);
+        }).catch(err => {
+            console.error('Error al copiar', err);
+        });
+    }
+
+    // 3. Gestión del Toast
+    let toastTimeout;
+    function showToast(htmlMsg) {
+        const t = document.getElementById("toast");
+        t.innerHTML = htmlMsg; // Permite HTML dentro del toast
+        t.classList.add("show");
+        
+        // Reiniciar el temporizador si hacemos muchos clics rápidos
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => { 
+            t.classList.remove("show"); 
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>

@@ -84,5 +84,8 @@ docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/
 echo "Generating css for Noon subtheme"
 docker exec -it sw-php-fpm  /bin/bash -c  "/application/sinergiacrm/SticInclude/vendor/scssphp/bin/pscss -s compressed /application/sinergiacrm/themes/SuiteP/css/Noon/style.scss > /application/sinergiacrm/themes/SuiteP/css/Noon/style.css && mkdir -p /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css && cp /application/sinergiacrm/themes/SuiteP/css/Noon/style.css /application/sinergiacrm/cache/themes/SuiteP/css/Noon/style.css"
 
+echo "Generating html for icons list"
+php suitepicons.php
+
 # Delete tmpSrc directory and SuiteP-Icon-Font repository
 rm -rf tmpSrc
