@@ -1,0 +1,26 @@
+{
+  "name": "sinergiacrm-suitep-icon-font",
+  "version": "1.0.0",
+  "description": "The goal of this project is to turn the icons in the [SuiteCRM](https://suitecrm.com/) suitep theme  into a font. As this will provide better optimisation and control over how the the suitep theme looks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "icons:clean": "svgo -q --config svgo.config.mjs -f SticSrc/ -o tmpSrc",
+    "font:build": "fantasticon -n suitepicon -p suitepicon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinergiaTIC/SinergiaCRM-SuiteP-Icon-Font.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinergiaTIC/SinergiaCRM-SuiteP-Icon-Font/issues"
+  },
+  "homepage": "https://github.com/SinergiaTIC/SinergiaCRM-SuiteP-Icon-Font#readme",
+  "dependencies": {
+    "fantasticon": "^4.1.0",
+    "svgo": "^4.0.2"
+  }
+}
