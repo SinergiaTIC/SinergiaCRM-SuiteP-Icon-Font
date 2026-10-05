@@ -52,11 +52,17 @@ git pull
 # Compress and copy SuiteP Icons to tmp folder
 cp -r src/ tmpSrc
 
+# Use current node version
+nvm use
+
+# Install dependencies
+npm ci
+
 # Compress and copy SticSrc to tmp folder
-svgo -q -f SticSrc/ -o tmpSrc
+npm run icons:clean
 
 # Create font from ./tmpSrc folder
-icon-font-generator tmpSrc/*svg -o suitepicon --mono --center -p suitepicon --csspath suitepicon/suitepicon-glyphs.scss --name suitepicon 
+npm run font:build
 
 cp -r suitepicon/* ../sinergiacrm/themes/SuiteP/css/suitep-base/
 # docker cp suitepicon/. sw-php-fpm:/application/sinergiacrm/themes/SuiteP/css/suitep-base/
